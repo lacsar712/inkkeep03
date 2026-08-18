@@ -8,7 +8,7 @@ import (
 var ErrDenied = errors.New("denied")
 
 func WrapDenied(op string) error {
-	return fmt.Errorf("%s: %v", op, ErrDenied)
+	return fmt.Errorf("%s: %w", op, ErrDenied)
 }
 
 func Wrapf(err error, op string) error {
